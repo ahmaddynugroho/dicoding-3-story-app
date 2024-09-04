@@ -6,6 +6,7 @@
         <script type="module">
             import * as bootstrap from "bootstrap";
         </script>
+        <script type="module" src="./src/ts/active-nav-link.ts"></script>
         <title>Dashboard - Story App</title>
     </head>
 
@@ -34,12 +35,7 @@
                             class="navbar-nav justify-content-end flex-grow-1 pe-3"
                         >
                             <li class="nav-item">
-                                <a
-                                    class="nav-link active"
-                                    aria-current="page"
-                                    href="#"
-                                    >Dashboard</a
-                                >
+                                <active-nav-link></active-nav-link>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Tambah Story</a>
