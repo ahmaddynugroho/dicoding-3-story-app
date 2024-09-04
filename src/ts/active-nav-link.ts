@@ -1,5 +1,5 @@
 import { html, LitElement } from "lit";
-import { customElement } from "lit/decorators.js";
+import { customElement, property } from "lit/decorators.js";
 
 @customElement("active-nav-link")
 export class ActiveNavLink extends LitElement {
@@ -7,10 +7,16 @@ export class ActiveNavLink extends LitElement {
         return this;
     }
 
+    @property()
+    name = "no name";
+
+    @property()
+    href = "#no-href";
+
     protected render(): unknown {
         return html`
-            <a class="nav-link active" aria-current="page" href="#"
-                >Dashboard</a
+            <a class="nav-link active" aria-current="page" href=${this.href}
+                >${this.name}</a
             >
         `;
     }
