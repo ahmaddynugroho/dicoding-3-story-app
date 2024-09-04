@@ -81,3 +81,45 @@ export class NavGroup extends LitElement {
         `;
     }
 }
+
+@customElement("nav-offcanvas")
+export class NavOffcanvas extends LitElement {
+    protected createRenderRoot(): HTMLElement | DocumentFragment {
+        return this;
+    }
+
+    @property()
+    activeLink = "no active link";
+
+    protected render(): unknown {
+        return html`
+            <nav class="navbar bg-body-tertiary fixed-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Story Abb</a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar"
+                        aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="offcanvas offcanvas-end"
+                        tabindex="-1"
+                        id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel"
+                    >
+                        <div class="offcanvas-body">
+                            <nav-group
+                                activeLink=${this.activeLink}
+                            ></nav-group>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        `;
+    }
+}
