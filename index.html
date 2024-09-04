@@ -7,6 +7,7 @@
             import * as bootstrap from "bootstrap";
         </script>
         <script type="module" src="./src/ts/active-nav-link.ts"></script>
+        <script type="module" src="./src/ts/nav-link.ts"></script>
         <title>Dashboard - Story App</title>
     </head>
 
@@ -41,10 +42,16 @@
                                 ></active-nav-link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Tambah Story</a>
+                                <nav-link
+                                    name="Tambah Story"
+                                    href="add-story"
+                                ></nav-link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Profile</a>
+                                <nav-link
+                                    name="Profile"
+                                    href="profile"
+                                ></nav-link>
                             </li>
                         </ul>
                     </div>
