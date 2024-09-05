@@ -13,14 +13,7 @@ export class RenderCards extends LitElement {
 
     constructor() {
         super();
-        const cache = localStorage.getItem("cards");
-        if (cache) {
-            this.cards = JSON.parse(cache);
-        } else {
-            localStorage.setItem("cards", JSON.stringify(data));
-            this.cards = data;
-        }
-        console.debug(this.cards);
+        this.cards = data;
     }
 
     protected render(): unknown {
