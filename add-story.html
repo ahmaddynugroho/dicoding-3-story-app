@@ -10,8 +10,23 @@
         <title>Dashboard - Story App</title>
     </head>
 
-    <body class="pt-5">
+    <body style="padding-top: 5rem" class="container">
         <nav-offcanvas activeLink="Tambah Story"></nav-offcanvas>
-        <p>ini add story</p>
+
+        <div class="mb-3">
+            <label for="story-description" class="form-label"
+                >Story Description</label
+            >
+            <textarea
+                class="form-control"
+                id="story-description"
+                rows="3"
+            ></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="story-photo" class="form-label">Story Photo</label>
+            <input class="form-control" type="file" id="story-photo" />
+        </div>
     </body>
 </html>
