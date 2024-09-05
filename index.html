@@ -9,28 +9,12 @@
 
         <script type="module" src="./src/ts/nav.ts"></script>
         <link rel="stylesheet" href="./src/scss/card.scss" />
+        <script type="module" src="./src/ts/cards.ts"></script>
         <title>Dashboard - Story App</title>
     </head>
 
-    <body class="pt-5">
+    <body style="padding-top: 5rem">
         <nav-offcanvas activeLink="Dashboard"></nav-offcanvas>
-        <p>ini dashboard</p>
-        <div class="card" style="width: 18rem">
-            <img
-                src="https://picsum.photos/1200/700?random=1"
-                class="card-img-top"
-                alt="..."
-            />
-            <div class="card-body">
-                <p class="card-text">
-                    In rhoncus lorem nec ex egestas mollis vel a mauris.
-                    Pellentesque vel diam at neque hendrerit bibendum. Quisque
-                    egestas, dolor eu semper dapibus, turpis neque.
-                </p>
-                <p class="caption">
-                    Faisal Sulaiman<br />2022-01-08T06:34:18.598Z
-                </p>
-            </div>
-        </div>
+        <render-cards></render-cards>
     </body>
 </html>

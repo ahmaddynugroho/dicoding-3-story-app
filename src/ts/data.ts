@@ -1,4 +1,12 @@
-export default [
+export type Story = {
+    id: string;
+    name: string;
+    description: string;
+    photoUrl: string;
+    createdAt: string;
+};
+
+export const data: Story[] = [
     {
         id: "story-FvU4u0Vp2S3PMsFg",
         name: "Faisal Sulaiman",
