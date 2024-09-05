@@ -1,0 +1,19 @@
+@use "./typography.scss" as typo;
+
+$bg-hover: #eee;
+$border-hover: cornflowerblue;
+
+@mixin hover-primary() {
+    background-color: $bg-hover;
+    border-color: $border-hover;
+}
+
+.card {
+    &:hover {
+        @include hover-primary();
+    }
+
+    .caption {
+        @include typo.small-text();
+    }
+}
