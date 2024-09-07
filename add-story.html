@@ -4,37 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./src/scss/bootstrap.scss" />
         <script src="./src/ts/authorization.ts"></script>
-        <script type="module">
-            import * as bootstrap from "bootstrap";
-
-            const forms = document.querySelectorAll(".needs-validation");
-            const toastTrigger = document.getElementById("upload-button");
-            const toastLive = document.getElementById("uploaded-toast");
-            Array.from(forms).forEach((form) => {
-                form.addEventListener(
-                    "submit",
-                    (event) => {
-                        if (form.checkValidity()) {
-                            event.preventDefault();
-                            if (toastTrigger) {
-                                const toastBootstrap =
-                                    bootstrap.Toast.getOrCreateInstance(
-                                        toastLive,
-                                    );
-                                toastBootstrap.show();
-                            }
-                        }
-                        if (!form.checkValidity()) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-
-                        form.classList.add("was-validated");
-                    },
-                    false,
-                );
-            });
-        </script>
+        <script type="module" src="./src/ts/add-story.ts" defer></script>
         <script type="module" src="./src/ts/nav.ts"></script>
         <title>Dashboard - Story App</title>
     </head>
@@ -42,27 +12,29 @@
     <body style="padding-top: 5rem" class="container">
         <nav-offcanvas activeLink="Tambah Story"></nav-offcanvas>
 
-        <form class="needs-validation" novalidate>
+        <form id="post-form" class="needs-validation" novalidate>
             <div class="mb-3">
-                <label for="story-description" class="form-label"
+                <label for="description" class="form-label"
                     >Story Description</label
                 >
                 <textarea
                     class="form-control"
-                    id="story-description"
+                    id="description"
                     rows="3"
                     required
+                    name="description"
                 ></textarea>
                 <div class="invalid-feedback">Masukkan deskripsi fotomu</div>
             </div>
 
             <div class="mb-3">
-                <label for="story-photo" class="form-label">Story Photo</label>
+                <label for="photo" class="form-label">Story Photo</label>
                 <input
                     required
+                    name="photo"
                     class="form-control"
                     type="file"
-                    id="story-photo"
+                    id="photo"
                 />
                 <div class="invalid-feedback">Masukkan fotomu</div>
             </div>
@@ -70,30 +42,45 @@
             <button type="submit" class="btn btn-info" id="upload-button">
                 Upload Photo!
             </button>
-
-            <div class="toast-container position-fixed bottom-0 end-0 p-3">
-                <div
-                    id="uploaded-toast"
-                    class="toast"
-                    role="alert"
-                    aria-live="assertive"
-                    aria-atomic="true"
-                >
-                    <div class="toast-header">
-                        <strong class="me-auto">Uploaded!</strong>
-                        <small>0 seconds ago</small>
-                        <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="toast"
-                            aria-label="Close"
-                        ></button>
-                    </div>
-                    <div class="toast-body">
-                        Photo storymu berhasil di upload!
-                    </div>
-                </div>
-            </div>
         </form>
+
+        <div
+            id="loading"
+            class="alert alert-warning"
+            role="alert"
+            style="display: none"
+        >
+            Mohon menunggu respon server...
+        </div>
+        <div
+            id="error"
+            class="alert alert-danger"
+            role="alert"
+            style="display: none"
+        >
+            smth is wrong
+        </div>
+
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div
+                id="uploaded-toast"
+                class="toast"
+                role="alert"
+                aria-live="assertive"
+                aria-atomic="true"
+            >
+                <div class="toast-header">
+                    <strong class="me-auto">Uploaded!</strong>
+                    <small>0 seconds ago</small>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="toast"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="toast-body">Photo storymu berhasil di upload!</div>
+            </div>
+        </div>
     </body>
 </html>
