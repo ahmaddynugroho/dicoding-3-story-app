@@ -53,6 +53,8 @@ export class NavGroup extends LitElement {
         ["Dashboard", "/"],
         ["Tambah Story", "add-story"],
         ["Profile", "profile"],
+        ["Register", "register"],
+        ["Login", "login"],
     ];
 
     protected render(): unknown {

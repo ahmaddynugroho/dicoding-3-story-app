@@ -1,0 +1,73 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./src/scss/bootstrap.scss" />
+        <script type="module">
+            import * as bootstrap from "bootstrap";
+        </script>
+        <script type="module" src="./src/ts/register.ts" defer></script>
+
+        <script type="module" src="./src/ts/nav.ts"></script>
+        <title>Register - Story App</title>
+    </head>
+
+    <body style="padding-top: 5rem" class="container">
+        <nav-offcanvas activeLink="Register"></nav-offcanvas>
+        <form id="register-form" class="needs-validation">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="masukkan nama"
+                    required
+                />
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="name@gmail.com"
+                    required
+                />
+            </div>
+            <label for="password" class="form-label">Password</label>
+            <input
+                type="password"
+                id="password"
+                class="form-control"
+                aria-describedby="passwordHelpBlock"
+                required
+            />
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+        <div
+            id="loading"
+            class="alert alert-warning"
+            role="alert"
+            style="display: none"
+        >
+            Mohon menunggu respon server...
+        </div>
+        <div
+            id="registered"
+            class="alert alert-info"
+            role="alert"
+            style="display: none"
+        >
+            registered
+        </div>
+        <div
+            id="error"
+            class="alert alert-danger"
+            role="alert"
+            style="display: none"
+        >
+            smth is wrong
+        </div>
+    </body>
+</html>
