@@ -55,6 +55,7 @@ export class NavGroup extends LitElement {
         ["Profile", "profile"],
         ["Register", "register"],
         ["Login", "login"],
+        ["Logout", "logout"],
     ];
 
     protected render(): unknown {
