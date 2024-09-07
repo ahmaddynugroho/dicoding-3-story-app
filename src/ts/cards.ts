@@ -28,23 +28,15 @@ export class RenderCards extends LitElement {
             .then(({ data }) => {
                 const stories = data.listStory;
                 this.cards = stories;
+                const loadingElement = document.querySelector(
+                    "#loading",
+                ) as HTMLDivElement;
+                loadingElement.style.display = "none";
             });
     }
 
     protected render(): unknown {
         return html`
-            ${this.cards[0]
-                ? html`
-                      <div
-                          id="loading"
-                          class="alert alert-warning"
-                          role="alert"
-                          style="display: none"
-                      >
-                          Mohon menunggu respon server...
-                      </div>
-                  `
-                : ""}
             ${this.cards[0]
                 ? html`
                       <h2>Most liked story</h2>
