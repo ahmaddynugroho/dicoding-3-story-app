@@ -35,6 +35,20 @@ export class RenderCards extends LitElement {
         return html`
             ${this.cards[0]
                 ? html`
+                      <div
+                          id="loading"
+                          class="alert alert-warning"
+                          role="alert"
+                          style="display: none"
+                      >
+                          Mohon menunggu respon server...
+                      </div>
+                  `
+                : ""}
+            ${this.cards[0]
+                ? html`
+                      <h2>Most liked story</h2>
+
                       <div id="carouselExample" class="carousel slide mb-3">
                           <div class="carousel-inner">
                               <div class="carousel-item active">
