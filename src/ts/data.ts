@@ -1,5 +1,3 @@
-import stories from "./DATA.json";
-
 export type Story = {
     id: string;
     name: string;
@@ -7,5 +5,3 @@ export type Story = {
     photoUrl: string;
     createdAt: string;
 };
-
-export let data: Story[] = stories.listStory;
